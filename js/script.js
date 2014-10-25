@@ -1,45 +1,25 @@
-//set an empty variable called selected
-var selectedsq;
-var appcolor;
+//set an empty variable called selectedsq that can hold multiple values
+var selectedsq = [];
+var buttonid;
 
 $(".box").click(function (){
-    selectedsq=this;
-//    console.log(selectedsq);
-    $(this).css("border-color","aqua");
+    // console.log(this);  //which class=box element did you click on?
+    selectedsq.push(this);  //add clicked element to array
+    // console.log(selectedsq);
+    $(selectedsq).css("border-color","aqua");  //indicate selection through aqua color
 })
 
+$("button").click(function()  //when a button is clicked
+{
+    // console.log(this);  //what did you click on?
+    buttonid=$(this).attr("id"); //get the ID value of the element you clicked on
+    // console.log(buttonid);  //print value of buttonid
 
-
-// this is currently hard coded with separate if statements for every button
-// this code is easy to follow but not efficient
-$("button").click(function(){
-    appcolor=this;
-    if ( $(appcolor).attr("id") === "red" ) 
-    {
-        $(selectedsq).css("background-color","red");
-    };
-    
-    if ( $(appcolor).attr("id") === "blue" ) 
-    {
-        $(selectedsq).css("background-color","blue");
+    if($(this).attr("id") === "unselect"){  //if the unselect button is clicked
+        $("div[class=box]").css("border-color", "black");//select all <div> with class "box", change border to black
+        //$(selectedsq).css("border-color", "black");
+        selectedsq = [];  //reset variable holding selectedsq
     };
 
-    if ( $(appcolor).attr("id") === "orange" ) 
-    {
-        $(selectedsq).css("background-color","orange");
-    };
-    
-    if ( $(appcolor).attr("id") === "yellow" ) 
-    {
-        $(selectedsq).css("background-color","yellow");
-    };    
-    
-    if ( $(appcolor).attr("id") === "green" ) 
-    {
-        $(selectedsq).css("background-color","green");
-    };       
-
-    $(selectedsq).css("border-color","black");
-
-    
+    $(selectedsq).css("background-color", buttonid);   //change the color of the sq based on value of button id
 });
