@@ -13,34 +13,48 @@
 </head>
 
 <body>
+  
+  <header>
+  <h1> Which boxes do you want to recolor? </h1>
+  </header>
 
-  <div class="grid">
-    <p> which boxes do you want to recolor? </p>
-    <div class="box" id="A">
+  <section>
+      <ul>
+        <li class="box" id="A">
           A
-    </div>
-    <div class="box" id="B">
+        </li>
+        <li class="box" id="B">
           B
-    </div>
-    <div class="box" id="C">
+        </li>
+        <li class="box" id="C">
           C
-    </div>
-    <div class="box" id="D">
+        </li>
+        <li class="box" id="D">
           D
-    </div>
-  </div>
+        </li>
+      </ul>
+  </section>
 
+  <header>
+  <h2> Choose the new color for the selected boxes </h2>
+  </header>
+
+  <section>
   <div class="colors">
-    <p> choose the new color </p>
-    <button id="red"> red </button>
-    <button id="orange"> orange </button>
-    <button id="yellow"> yellow </button>
-    <button id="green"> green </button>
-    <button id="blue"> blue </button>
+    <p>
+      <button id="red"> red </button>
+      <button id="orange"> orange </button>
+      <button id="yellow"> yellow </button>
+      <button id="green"> green </button>
+      <button id="blue"> blue </button>
+    </p>
   </div>
+  </section>
 
   <div class="controls">
-    <button id="unselect"> clear selected boxes </button>
+    <p>
+      <button id="unselect"> clear selected boxes </button>
+    </p>
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
